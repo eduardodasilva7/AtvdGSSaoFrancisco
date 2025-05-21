@@ -1,6 +1,7 @@
+
 1 pagina 
 
-Tabela Controle do estoque
+Tabela Controle do estoque (Finalizado)
 	peso
 	quantidade	
 	nome do produto
@@ -19,9 +20,12 @@ Tabela Controle do estoque
 	um limete de dois produtos iguais caso o produto estja sobrando
 	produtos principais(arroz, macarrão, feijao, leite) tds tem que conter
 	na hra de montar a sacolas produtos abaixo de 90 ou com categoria de produtos diversos não entraram 
---ideia
+    
+	--ideia
 	ser blocos na tela numerado
 	podendo ter um check qnd a sacola fosse feita pelos ovoluntarios
 	e com esse check já desse baixa no estoque 
 
 1 pagina para cadastro de familias
+
+
