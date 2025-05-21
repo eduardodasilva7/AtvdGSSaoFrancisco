@@ -1,0 +1,10 @@
+C:\Users\eduardo.dsilva17\Documents\Visual Studio 2022\AtvdGSSaoFrancisco\AtvdGSSaoFrancisco\bin\Debug\AtvdGSSaoFrancisco.exe.config
+C:\Users\eduardo.dsilva17\Documents\Visual Studio 2022\AtvdGSSaoFrancisco\AtvdGSSaoFrancisco\bin\Debug\AtvdGSSaoFrancisco.exe
+C:\Users\eduardo.dsilva17\Documents\Visual Studio 2022\AtvdGSSaoFrancisco\AtvdGSSaoFrancisco\bin\Debug\AtvdGSSaoFrancisco.pdb
+C:\Users\eduardo.dsilva17\Documents\Visual Studio 2022\AtvdGSSaoFrancisco\AtvdGSSaoFrancisco\obj\Debug\AtvdGSSaoFrancisco.csproj.AssemblyReference.cache
+C:\Users\eduardo.dsilva17\Documents\Visual Studio 2022\AtvdGSSaoFrancisco\AtvdGSSaoFrancisco\obj\Debug\AtvdGSSaoFrancisco.frmCadastroEstoque.resources
+C:\Users\eduardo.dsilva17\Documents\Visual Studio 2022\AtvdGSSaoFrancisco\AtvdGSSaoFrancisco\obj\Debug\AtvdGSSaoFrancisco.Properties.Resources.resources
+C:\Users\eduardo.dsilva17\Documents\Visual Studio 2022\AtvdGSSaoFrancisco\AtvdGSSaoFrancisco\obj\Debug\AtvdGSSaoFrancisco.csproj.GenerateResource.cache
+C:\Users\eduardo.dsilva17\Documents\Visual Studio 2022\AtvdGSSaoFrancisco\AtvdGSSaoFrancisco\obj\Debug\AtvdGSSaoFrancisco.csproj.CoreCompileInputs.cache
+C:\Users\eduardo.dsilva17\Documents\Visual Studio 2022\AtvdGSSaoFrancisco\AtvdGSSaoFrancisco\obj\Debug\AtvdGSSaoFrancisco.exe
+C:\Users\eduardo.dsilva17\Documents\Visual Studio 2022\AtvdGSSaoFrancisco\AtvdGSSaoFrancisco\obj\Debug\AtvdGSSaoFrancisco.pdb

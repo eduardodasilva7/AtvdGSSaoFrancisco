@@ -8,15 +8,20 @@ Tabela Controle do estoque
 	categoria para dizer da onde veio o produto
 	data de entrada
 	data de saida 
+	categoria de produto necessario, diverso
 
 1 Pagina para cadastrar isso
+	produtos vencidos não podem ser cadastrados 
 
 1 pagina para gerar as sacolas
 	seriam 90 sacolas
 	pesos parecidos
 	um limete de dois produtos iguais caso o produto estja sobrando
 	produtos principais(arroz, macarrão, feijao, leite) tds tem que conter
+	na hra de montar a sacolas produtos abaixo de 90 ou com categoria de produtos diversos não entraram 
 --ideia
 	ser blocos na tela numerado
 	podendo ter um check qnd a sacola fosse feita pelos ovoluntarios
 	e com esse check já desse baixa no estoque 
+
+1 pagina para cadastro de familias
