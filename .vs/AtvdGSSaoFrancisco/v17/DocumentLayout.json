@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\eduardo.dsilva17\\Documents\\Visual Studio 2022\\AtvdGSSaoFrancisco\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8E5B0594-7D97-4CCE-9D7C-1BAC9C99AEA8}|AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco.csproj|C:\\Users\\eduardo.dsilva17\\Documents\\Visual Studio 2022\\AtvdGSSaoFrancisco\\atvdgssaofrancisco\\frmcadastroestoque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8E5B0594-7D97-4CCE-9D7C-1BAC9C99AEA8}|AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco.csproj|c:\\users\\eduardo.dsilva17\\documents\\visual studio 2022\\atvdgssaofrancisco\\atvdgssaofrancisco\\frmcadastroestoque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8E5B0594-7D97-4CCE-9D7C-1BAC9C99AEA8}|AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco.csproj|solutionrelative:atvdgssaofrancisco\\frmcadastroestoque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -11,17 +11,25 @@
       "RelativeMoniker": "D:0:0:{8E5B0594-7D97-4CCE-9D7C-1BAC9C99AEA8}|AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco.csproj|solutionrelative:atvdgssaofrancisco\\frmcadastroestoque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8E5B0594-7D97-4CCE-9D7C-1BAC9C99AEA8}|AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco.csproj|C:\\Users\\eduardo.dsilva17\\Documents\\Visual Studio 2022\\AtvdGSSaoFrancisco\\atvdgssaofrancisco\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8E5B0594-7D97-4CCE-9D7C-1BAC9C99AEA8}|AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco.csproj|c:\\users\\eduardo.dsilva17\\documents\\visual studio 2022\\atvdgssaofrancisco\\atvdgssaofrancisco\\frmestoque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8E5B0594-7D97-4CCE-9D7C-1BAC9C99AEA8}|AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco.csproj|solutionrelative:atvdgssaofrancisco\\frmestoque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8E5B0594-7D97-4CCE-9D7C-1BAC9C99AEA8}|AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco.csproj|c:\\users\\eduardo.dsilva17\\documents\\visual studio 2022\\atvdgssaofrancisco\\atvdgssaofrancisco\\frmestoque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8E5B0594-7D97-4CCE-9D7C-1BAC9C99AEA8}|AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco.csproj|solutionrelative:atvdgssaofrancisco\\frmestoque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8E5B0594-7D97-4CCE-9D7C-1BAC9C99AEA8}|AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco.csproj|c:\\users\\eduardo.dsilva17\\documents\\visual studio 2022\\atvdgssaofrancisco\\atvdgssaofrancisco\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8E5B0594-7D97-4CCE-9D7C-1BAC9C99AEA8}|AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco.csproj|solutionrelative:atvdgssaofrancisco\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
     {
-      "Orientation": 1,
+      "Orientation": 0,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedHeight": 200,
+          "DockedWidth": 200,
           "SelectedChildIndex": 2,
           "Children": [
             {
@@ -40,22 +48,9 @@
               "RelativeDocumentMoniker": "AtvdGSSaoFrancisco\\frmCadastroEstoque.cs",
               "ToolTip": "C:\\Users\\eduardo.dsilva17\\Documents\\Visual Studio 2022\\AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco\\frmCadastroEstoque.cs",
               "RelativeToolTip": "AtvdGSSaoFrancisco\\frmCadastroEstoque.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAcwC4AAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwBsAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-21T13:44:25.05Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\eduardo.dsilva17\\Documents\\Visual Studio 2022\\AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco\\Program.cs",
-              "RelativeDocumentMoniker": "AtvdGSSaoFrancisco\\Program.cs",
-              "ToolTip": "C:\\Users\\eduardo.dsilva17\\Documents\\Visual Studio 2022\\AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco\\Program.cs",
-              "RelativeToolTip": "AtvdGSSaoFrancisco\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-21T14:17:41.396Z",
+              "WhenOpened": "2025-06-09T14:39:15.465Z",
               "EditorCaption": ""
             },
             {
@@ -67,8 +62,46 @@
               "ToolTip": "C:\\Users\\eduardo.dsilva17\\Documents\\Visual Studio 2022\\AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco\\frmCadastroEstoque.cs [Design]",
               "RelativeToolTip": "AtvdGSSaoFrancisco\\frmCadastroEstoque.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-21T13:36:49.89Z",
+              "WhenOpened": "2025-06-09T14:39:12.109Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmEstoque.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\eduardo.dsilva17\\Documents\\Visual Studio 2022\\AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco\\frmEstoque.cs",
+              "RelativeDocumentMoniker": "AtvdGSSaoFrancisco\\frmEstoque.cs",
+              "ToolTip": "C:\\Users\\eduardo.dsilva17\\Documents\\Visual Studio 2022\\AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco\\frmEstoque.cs [Design]",
+              "RelativeToolTip": "AtvdGSSaoFrancisco\\frmEstoque.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-06T14:20:51.928Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\eduardo.dsilva17\\Documents\\Visual Studio 2022\\AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco\\Program.cs",
+              "RelativeDocumentMoniker": "AtvdGSSaoFrancisco\\Program.cs",
+              "ToolTip": "C:\\Users\\eduardo.dsilva17\\Documents\\Visual Studio 2022\\AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco\\Program.cs",
+              "RelativeToolTip": "AtvdGSSaoFrancisco\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T14:25:05.416Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmEstoque.cs",
+              "DocumentMoniker": "C:\\Users\\eduardo.dsilva17\\Documents\\Visual Studio 2022\\AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco\\frmEstoque.cs",
+              "RelativeDocumentMoniker": "AtvdGSSaoFrancisco\\frmEstoque.cs",
+              "ToolTip": "C:\\Users\\eduardo.dsilva17\\Documents\\Visual Studio 2022\\AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco\\frmEstoque.cs",
+              "RelativeToolTip": "AtvdGSSaoFrancisco\\frmEstoque.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAswEUAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T13:44:44.498Z",
+              "EditorCaption": ""
             }
           ]
         }

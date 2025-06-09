@@ -16,7 +16,7 @@ namespace AtvdGSSaoFrancisco
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmCadastroEstoque());
+            Application.Run(new frmEstoque());
         }
     }
 }

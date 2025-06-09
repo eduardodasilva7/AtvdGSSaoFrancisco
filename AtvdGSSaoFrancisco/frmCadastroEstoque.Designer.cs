@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadastroEstoque));
             this.gpbCadEstoque = new System.Windows.Forms.GroupBox();
+            this.lblDataSaida = new System.Windows.Forms.Label();
             this.dtpDataEntrada = new System.Windows.Forms.DateTimePicker();
             this.cbbLocalizacao = new System.Windows.Forms.ComboBox();
             this.lblLocalizacao = new System.Windows.Forms.Label();
             this.cbbCategoria = new System.Windows.Forms.ComboBox();
-            this.mktValidade = new System.Windows.Forms.MaskedTextBox();
             this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.txtPeso = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
@@ -51,20 +51,20 @@
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnEstoque = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
+            this.dtpValidade = new System.Windows.Forms.DateTimePicker();
             this.mktDataSaida = new System.Windows.Forms.MaskedTextBox();
-            this.lblDataSaida = new System.Windows.Forms.Label();
             this.gpbCadEstoque.SuspendLayout();
             this.SuspendLayout();
             // 
             // gpbCadEstoque
             // 
+            this.gpbCadEstoque.Controls.Add(this.dtpValidade);
             this.gpbCadEstoque.Controls.Add(this.mktDataSaida);
             this.gpbCadEstoque.Controls.Add(this.lblDataSaida);
             this.gpbCadEstoque.Controls.Add(this.dtpDataEntrada);
             this.gpbCadEstoque.Controls.Add(this.cbbLocalizacao);
             this.gpbCadEstoque.Controls.Add(this.lblLocalizacao);
             this.gpbCadEstoque.Controls.Add(this.cbbCategoria);
-            this.gpbCadEstoque.Controls.Add(this.mktValidade);
             this.gpbCadEstoque.Controls.Add(this.txtQuantidade);
             this.gpbCadEstoque.Controls.Add(this.txtPeso);
             this.gpbCadEstoque.Controls.Add(this.txtNome);
@@ -84,6 +84,15 @@
             this.gpbCadEstoque.TabStop = false;
             this.gpbCadEstoque.Text = "Cadastro de Produtos";
             // 
+            // lblDataSaida
+            // 
+            this.lblDataSaida.AutoSize = true;
+            this.lblDataSaida.Location = new System.Drawing.Point(577, 59);
+            this.lblDataSaida.Name = "lblDataSaida";
+            this.lblDataSaida.Size = new System.Drawing.Size(126, 24);
+            this.lblDataSaida.TabIndex = 16;
+            this.lblDataSaida.Text = "Data de Saida";
+            // 
             // dtpDataEntrada
             // 
             this.dtpDataEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -97,7 +106,6 @@
             this.cbbLocalizacao.FormattingEnabled = true;
             this.cbbLocalizacao.ItemHeight = 24;
             this.cbbLocalizacao.Items.AddRange(new object[] {
-            "",
             "Rotary",
             "Avulso",
             "Drive Thru"});
@@ -120,22 +128,12 @@
             this.cbbCategoria.FormattingEnabled = true;
             this.cbbCategoria.ItemHeight = 24;
             this.cbbCategoria.Items.AddRange(new object[] {
-            "",
             "Necessário ",
             "Diverso "});
             this.cbbCategoria.Location = new System.Drawing.Point(343, 181);
             this.cbbCategoria.Name = "cbbCategoria";
             this.cbbCategoria.Size = new System.Drawing.Size(130, 32);
             this.cbbCategoria.TabIndex = 3;
-            // 
-            // mktValidade
-            // 
-            this.mktValidade.Location = new System.Drawing.Point(57, 293);
-            this.mktValidade.Mask = "00/00/0000";
-            this.mktValidade.Name = "mktValidade";
-            this.mktValidade.Size = new System.Drawing.Size(130, 29);
-            this.mktValidade.TabIndex = 5;
-            this.mktValidade.ValidatingType = typeof(System.DateTime);
             // 
             // txtQuantidade
             // 
@@ -265,6 +263,7 @@
             this.btnLimpar.Text = "&Limpar";
             this.btnLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnEstoque
             // 
@@ -277,6 +276,7 @@
             this.btnEstoque.Text = "&Estoque";
             this.btnEstoque.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEstoque.UseVisualStyleBackColor = true;
+            this.btnEstoque.Click += new System.EventHandler(this.btnEstoque_Click);
             // 
             // btnVoltar
             // 
@@ -289,25 +289,24 @@
             this.btnVoltar.Text = "&Voltar";
             this.btnVoltar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
+            // 
+            // dtpValidade
+            // 
+            this.dtpValidade.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpValidade.Location = new System.Drawing.Point(57, 293);
+            this.dtpValidade.Name = "dtpValidade";
+            this.dtpValidade.Size = new System.Drawing.Size(128, 29);
+            this.dtpValidade.TabIndex = 18;
             // 
             // mktDataSaida
             // 
-            this.mktDataSaida.Enabled = false;
             this.mktDataSaida.Location = new System.Drawing.Point(581, 86);
             this.mktDataSaida.Mask = "00/00/0000";
             this.mktDataSaida.Name = "mktDataSaida";
             this.mktDataSaida.Size = new System.Drawing.Size(130, 29);
             this.mktDataSaida.TabIndex = 17;
             this.mktDataSaida.ValidatingType = typeof(System.DateTime);
-            // 
-            // lblDataSaida
-            // 
-            this.lblDataSaida.AutoSize = true;
-            this.lblDataSaida.Location = new System.Drawing.Point(577, 59);
-            this.lblDataSaida.Name = "lblDataSaida";
-            this.lblDataSaida.Size = new System.Drawing.Size(126, 24);
-            this.lblDataSaida.TabIndex = 16;
-            this.lblDataSaida.Text = "Data de Saida";
             // 
             // frmCadastroEstoque
             // 
@@ -347,7 +346,6 @@
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label lblCodigo;
-        private System.Windows.Forms.MaskedTextBox mktValidade;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnLimpar;
@@ -357,7 +355,8 @@
         private System.Windows.Forms.ComboBox cbbLocalizacao;
         private System.Windows.Forms.Label lblLocalizacao;
         private System.Windows.Forms.DateTimePicker dtpDataEntrada;
-        private System.Windows.Forms.MaskedTextBox mktDataSaida;
         private System.Windows.Forms.Label lblDataSaida;
+        private System.Windows.Forms.DateTimePicker dtpValidade;
+        private System.Windows.Forms.MaskedTextBox mktDataSaida;
     }
 }

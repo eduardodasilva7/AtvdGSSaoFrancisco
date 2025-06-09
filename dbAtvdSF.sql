@@ -7,6 +7,7 @@ create table tbEstoque (
     codProduto int not null auto_increment,
     nomeProd varchar(30) not null,
     peso char(5) not null,
+    quantidadeProd char(5) not null,
     validade char(10) not null,
     dataEntrada date not null,
     dataSaida char(10),
@@ -17,4 +18,3 @@ create table tbEstoque (
 
 desc tbEstoque;
 
-insert into tbEstoque(nomeProd, peso, validade, dataEntrada, dataSaida, categoriaProd, localizacaoProd) values("teste", '15kg', '20/11/2019', '20/11/2021', '25/12/2022', 'Necessario', 'Drive-Thru');

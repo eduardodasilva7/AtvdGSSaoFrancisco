@@ -24,6 +24,7 @@ namespace AtvdGSSaoFrancisco
         public frmCadastroEstoque()
         {
             InitializeComponent();
+            limparCampos();
         }
 
         private void frmCadastroEstoque_Load(object sender, EventArgs e)
@@ -33,18 +34,20 @@ namespace AtvdGSSaoFrancisco
             RemoveMenu(hMenu, MenuCount, MF_BYCOMMAND);
         }
 
-        public int cadastrarProduto(string nome, string peso, string validade, DateTime dataEntrada, string categoriaProd, string localizacaoProd)
+        public int cadastrarProduto(string nome, string peso, DateTime validade, DateTime dataEntrada, string dataSaida, string categoriaProd, string quantidadeProd, string localizacaoProd)
         {
             MySqlCommand comm = new MySqlCommand();
-            comm.CommandText = "insert into tbEstoque(nomeProd, peso, validade, dataEntrada,categoriaProd, localizacaoProd) " +
-                "values(@nomeProd, @peso, @validade, @dataEntrada, @categoriaProd, @localizacaoProd);";
+            comm.CommandText = "insert into tbEstoque(nomeProd, peso, quantidadeProd, validade, dataEntrada, dataSaida, categoriaProd, localizacaoProd) " +
+                "values(@nomeProd, @peso, @quantidadeProd, @validade, @dataEntrada, @dataSaida, @categoriaProd, @localizacaoProd);";
             comm.CommandType = CommandType.Text;
 
             comm.Parameters.Clear();
             comm.Parameters.Add("@nomeProd", MySqlDbType.VarChar, 30).Value = nome;
             comm.Parameters.Add("@peso", MySqlDbType.VarChar, 5).Value = peso;
-            comm.Parameters.Add("@validade", MySqlDbType.VarChar, 10).Value = validade;
+            comm.Parameters.Add("@validade", MySqlDbType.Date, 10).Value = validade;
+            comm.Parameters.Add("@quantidadeProd", MySqlDbType.VarChar, 4).Value = quantidadeProd;
             comm.Parameters.Add("@dataEntrada", MySqlDbType.Date, 100).Value = dataEntrada;
+            comm.Parameters.Add("@dataSaida", MySqlDbType.VarChar, 10).Value = dataSaida;
             comm.Parameters.Add("@categoriaProd", MySqlDbType.VarChar, 30).Value = categoriaProd;
             comm.Parameters.Add("@localizacaoProd", MySqlDbType.VarChar, 30).Value = localizacaoProd;                                                                                                                            
             
@@ -60,7 +63,51 @@ namespace AtvdGSSaoFrancisco
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            cadastrarProduto(txtNome.Text, txtPeso.Text, mktValidade.Text, dtpDataEntrada.Value, cbbCategoria.SelectedItem.ToString(), cbbLocalizacao.SelectedItem.ToString());
+            if(cadastrarProduto(txtNome.Text, txtPeso.Text, dtpValidade.Value, dtpDataEntrada.Value, mktDataSaida.Text, cbbCategoria.SelectedItem.ToString(), txtQuantidade.Text, cbbLocalizacao.SelectedItem.ToString()) == 1)
+            {
+                MessageBox.Show("Produto Cadastrado com sucesso!",
+                    "Menssagem do sistema",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information,
+                    MessageBoxDefaultButton.Button1);
+            }
+            else
+            {
+                if(txtNome.Text.Equals("") || txtPeso.Text.Equals("") || cbbCategoria.SelectedIndex == -1 || dtpValidade.Text.Equals("") || mktDataSaida.Text.Equals("  /  /") || txtQuantidade.Text.Equals("") || cbbLocalizacao.SelectedIndex == -1)
+                MessageBox.Show("Complete as informações!",
+                   "Mensagem do sistema",
+                   MessageBoxButtons.OK,
+                   MessageBoxIcon.Error,
+                   MessageBoxDefaultButton.Button1);
+            }
+        }
+        public void limparCampos()
+        {
+            txtCodigo.Clear();
+            txtNome.Clear();
+            mktDataSaida.Clear();
+            txtPeso.Clear();
+            dtpValidade.Text.Equals("");
+            txtQuantidade.Clear();
+            cbbCategoria.SelectedIndex = -1;
+            cbbLocalizacao.SelectedIndex = -1;
+            mktDataSaida.Text = "00/00/0000";
+        }
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            limparCampos();
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEstoque_Click(object sender, EventArgs e)
+        {
+            frmEstoque abrir = new frmEstoque();
+            abrir.Show();
+            this.Hide();
         }
     }
 }
