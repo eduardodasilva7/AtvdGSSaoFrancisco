@@ -42,3 +42,4 @@ C:\Users\eduardo.dsilva17\Documents\Visual Studio 2022\AtvdGSSaoFrancisco\AtvdGS
 C:\Users\eduardo.dsilva17\Documents\Visual Studio 2022\AtvdGSSaoFrancisco\AtvdGSSaoFrancisco\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\eduardo.dsilva17\Documents\Visual Studio 2022\AtvdGSSaoFrancisco\AtvdGSSaoFrancisco\obj\Debug\AtvdGSSa.3379975A.Up2Date
 C:\Users\eduardo.dsilva17\Documents\Visual Studio 2022\AtvdGSSaoFrancisco\AtvdGSSaoFrancisco\obj\Debug\AtvdGSSaoFrancisco.frmEstoque.resources
+C:\Users\eduardo.dsilva17\Documents\Visual Studio 2022\AtvdGSSaoFrancisco\AtvdGSSaoFrancisco\obj\Debug\AtvdGSSaoFrancisco.frmMenu.resources

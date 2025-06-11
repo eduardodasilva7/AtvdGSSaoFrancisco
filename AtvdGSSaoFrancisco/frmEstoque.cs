@@ -55,7 +55,7 @@ namespace AtvdGSSaoFrancisco
             while(DR.Read())
             {
                 
-                {
+                
                     ltbEstoque.Items.Add(
                         DR.GetInt32(0).ToString() + "   | " +
                         DR.GetString(1) + "   | " +
@@ -67,7 +67,7 @@ namespace AtvdGSSaoFrancisco
                         DR.GetString(7) + "   | " +
                         DR.GetString(8)
                         );
-                }
+                
 
                 
                 
@@ -75,6 +75,26 @@ namespace AtvdGSSaoFrancisco
             Conexao.fecharConexao();
         }
 
-        
+        private void ltbEstoque_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ltbEstoque.SelectedItems != null)
+            {
+                string linha = ltbEstoque.SelectedItem.ToString();
+                string[] campos = linha.Split('|');
+
+                string nome = campos[1].Trim();
+                frmCadastroEstoque abrir = new frmCadastroEstoque(nome);
+                abrir.Show();
+                this.Hide();
+
+            }
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            frmMenu abrir = new frmMenu();
+            abrir.Show();
+            this.Hide();
+        }
     }
 }

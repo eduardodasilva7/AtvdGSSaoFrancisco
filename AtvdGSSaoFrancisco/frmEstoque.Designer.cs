@@ -83,6 +83,7 @@
             this.ltbEstoque.Name = "ltbEstoque";
             this.ltbEstoque.Size = new System.Drawing.Size(716, 364);
             this.ltbEstoque.TabIndex = 9;
+            this.ltbEstoque.SelectedIndexChanged += new System.EventHandler(this.ltbEstoque_SelectedIndexChanged);
             // 
             // label9
             // 
@@ -168,6 +169,7 @@
             this.btnVoltar.Text = "&Voltar";
             this.btnVoltar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // btnAlterar
             // 

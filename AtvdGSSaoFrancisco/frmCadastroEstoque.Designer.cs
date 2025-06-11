@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadastroEstoque));
             this.gpbCadEstoque = new System.Windows.Forms.GroupBox();
+            this.dtpValidade = new System.Windows.Forms.DateTimePicker();
+            this.mktDataSaida = new System.Windows.Forms.MaskedTextBox();
             this.lblDataSaida = new System.Windows.Forms.Label();
             this.dtpDataEntrada = new System.Windows.Forms.DateTimePicker();
             this.cbbLocalizacao = new System.Windows.Forms.ComboBox();
@@ -51,8 +53,6 @@
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnEstoque = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
-            this.dtpValidade = new System.Windows.Forms.DateTimePicker();
-            this.mktDataSaida = new System.Windows.Forms.MaskedTextBox();
             this.gpbCadEstoque.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,6 +83,23 @@
             this.gpbCadEstoque.TabIndex = 0;
             this.gpbCadEstoque.TabStop = false;
             this.gpbCadEstoque.Text = "Cadastro de Produtos";
+            // 
+            // dtpValidade
+            // 
+            this.dtpValidade.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpValidade.Location = new System.Drawing.Point(57, 293);
+            this.dtpValidade.Name = "dtpValidade";
+            this.dtpValidade.Size = new System.Drawing.Size(128, 29);
+            this.dtpValidade.TabIndex = 18;
+            // 
+            // mktDataSaida
+            // 
+            this.mktDataSaida.Location = new System.Drawing.Point(581, 86);
+            this.mktDataSaida.Mask = "00/00/0000";
+            this.mktDataSaida.Name = "mktDataSaida";
+            this.mktDataSaida.Size = new System.Drawing.Size(130, 29);
+            this.mktDataSaida.TabIndex = 17;
+            this.mktDataSaida.ValidatingType = typeof(System.DateTime);
             // 
             // lblDataSaida
             // 
@@ -251,6 +268,7 @@
             this.btnAlterar.Text = "&Alterar";
             this.btnAlterar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnLimpar
             // 
@@ -290,23 +308,6 @@
             this.btnVoltar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
-            // 
-            // dtpValidade
-            // 
-            this.dtpValidade.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpValidade.Location = new System.Drawing.Point(57, 293);
-            this.dtpValidade.Name = "dtpValidade";
-            this.dtpValidade.Size = new System.Drawing.Size(128, 29);
-            this.dtpValidade.TabIndex = 18;
-            // 
-            // mktDataSaida
-            // 
-            this.mktDataSaida.Location = new System.Drawing.Point(581, 86);
-            this.mktDataSaida.Mask = "00/00/0000";
-            this.mktDataSaida.Name = "mktDataSaida";
-            this.mktDataSaida.Size = new System.Drawing.Size(130, 29);
-            this.mktDataSaida.TabIndex = 17;
-            this.mktDataSaida.ValidatingType = typeof(System.DateTime);
             // 
             // frmCadastroEstoque
             // 
