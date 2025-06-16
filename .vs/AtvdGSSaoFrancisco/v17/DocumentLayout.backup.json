@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\eduardo.dsilva17\\Documents\\Visual Studio 2022\\AtvdGSSaoFrancisco\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8E5B0594-7D97-4CCE-9D7C-1BAC9C99AEA8}|AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco.csproj|c:\\users\\eduardo.dsilva17\\documents\\visual studio 2022\\atvdgssaofrancisco\\atvdgssaofrancisco\\frmcadastroestoque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8E5B0594-7D97-4CCE-9D7C-1BAC9C99AEA8}|AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco.csproj|solutionrelative:atvdgssaofrancisco\\frmcadastroestoque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8E5B0594-7D97-4CCE-9D7C-1BAC9C99AEA8}|AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco.csproj|C:\\Users\\eduardo.dsilva17\\Documents\\Visual Studio 2022\\AtvdGSSaoFrancisco\\atvdgssaofrancisco\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8E5B0594-7D97-4CCE-9D7C-1BAC9C99AEA8}|AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco.csproj|solutionrelative:atvdgssaofrancisco\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8E5B0594-7D97-4CCE-9D7C-1BAC9C99AEA8}|AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco.csproj|C:\\Users\\eduardo.dsilva17\\Documents\\Visual Studio 2022\\AtvdGSSaoFrancisco\\atvdgssaofrancisco\\frmcadastroestoque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{8E5B0594-7D97-4CCE-9D7C-1BAC9C99AEA8}|AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco.csproj|solutionrelative:atvdgssaofrancisco\\frmcadastroestoque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8E5B0594-7D97-4CCE-9D7C-1BAC9C99AEA8}|AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco.csproj|C:\\Users\\eduardo.dsilva17\\Documents\\Visual Studio 2022\\AtvdGSSaoFrancisco\\atvdgssaofrancisco\\frmestoque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8E5B0594-7D97-4CCE-9D7C-1BAC9C99AEA8}|AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco.csproj|solutionrelative:atvdgssaofrancisco\\frmestoque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8E5B0594-7D97-4CCE-9D7C-1BAC9C99AEA8}|AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco.csproj|C:\\Users\\eduardo.dsilva17\\Documents\\Visual Studio 2022\\AtvdGSSaoFrancisco\\atvdgssaofrancisco\\frmestoque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{8E5B0594-7D97-4CCE-9D7C-1BAC9C99AEA8}|AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco.csproj|solutionrelative:atvdgssaofrancisco\\frmestoque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{8E5B0594-7D97-4CCE-9D7C-1BAC9C99AEA8}|AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco.csproj|c:\\users\\eduardo.dsilva17\\documents\\visual studio 2022\\atvdgssaofrancisco\\atvdgssaofrancisco\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8E5B0594-7D97-4CCE-9D7C-1BAC9C99AEA8}|AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco.csproj|solutionrelative:atvdgssaofrancisco\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,53 +30,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "frmEstoque.cs",
-              "DocumentMoniker": "C:\\Users\\eduardo.dsilva17\\Documents\\Visual Studio 2022\\AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco\\frmEstoque.cs",
-              "RelativeDocumentMoniker": "AtvdGSSaoFrancisco\\frmEstoque.cs",
-              "ToolTip": "C:\\Users\\eduardo.dsilva17\\Documents\\Visual Studio 2022\\AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco\\frmEstoque.cs",
-              "RelativeToolTip": "AtvdGSSaoFrancisco\\frmEstoque.cs",
-              "ViewState": "AgIAAEAAAAAAAAAAAAAUwFkAAAANAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "frmLogin.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\eduardo.dsilva17\\Documents\\Visual Studio 2022\\AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco\\frmLogin.cs",
+              "RelativeDocumentMoniker": "AtvdGSSaoFrancisco\\frmLogin.cs",
+              "ToolTip": "C:\\Users\\eduardo.dsilva17\\Documents\\Visual Studio 2022\\AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco\\frmLogin.cs [Design]*",
+              "RelativeToolTip": "AtvdGSSaoFrancisco\\frmLogin.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T13:44:44.498Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-16T14:17:57.887Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "frmCadastroEstoque.cs",
-              "DocumentMoniker": "C:\\Users\\eduardo.dsilva17\\Documents\\Visual Studio 2022\\AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco\\frmCadastroEstoque.cs",
-              "RelativeDocumentMoniker": "AtvdGSSaoFrancisco\\frmCadastroEstoque.cs",
-              "ToolTip": "C:\\Users\\eduardo.dsilva17\\Documents\\Visual Studio 2022\\AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco\\frmCadastroEstoque.cs",
-              "RelativeToolTip": "AtvdGSSaoFrancisco\\frmCadastroEstoque.cs",
-              "ViewState": "AgIAAEcAAAAAAAAAAIA3wFsAAAAiAAAAAAAAAA==",
+              "Title": "frmLogin.cs",
+              "DocumentMoniker": "C:\\Users\\eduardo.dsilva17\\Documents\\Visual Studio 2022\\AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco\\frmLogin.cs",
+              "RelativeDocumentMoniker": "AtvdGSSaoFrancisco\\frmLogin.cs",
+              "ToolTip": "C:\\Users\\eduardo.dsilva17\\Documents\\Visual Studio 2022\\AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco\\frmLogin.cs*",
+              "RelativeToolTip": "AtvdGSSaoFrancisco\\frmLogin.cs*",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAwBsAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T13:58:37.024Z",
+              "WhenOpened": "2025-06-11T14:52:15.832Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "frmCadastroEstoque.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\eduardo.dsilva17\\Documents\\Visual Studio 2022\\AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco\\frmCadastroEstoque.cs",
-              "RelativeDocumentMoniker": "AtvdGSSaoFrancisco\\frmCadastroEstoque.cs",
-              "ToolTip": "C:\\Users\\eduardo.dsilva17\\Documents\\Visual Studio 2022\\AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco\\frmCadastroEstoque.cs [Design]",
-              "RelativeToolTip": "AtvdGSSaoFrancisco\\frmCadastroEstoque.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T14:39:12.109Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "frmEstoque.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\eduardo.dsilva17\\Documents\\Visual Studio 2022\\AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco\\frmEstoque.cs",
-              "RelativeDocumentMoniker": "AtvdGSSaoFrancisco\\frmEstoque.cs",
-              "ToolTip": "C:\\Users\\eduardo.dsilva17\\Documents\\Visual Studio 2022\\AtvdGSSaoFrancisco\\AtvdGSSaoFrancisco\\frmEstoque.cs [Design]",
-              "RelativeToolTip": "AtvdGSSaoFrancisco\\frmEstoque.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-06T14:20:51.928Z",
-              "EditorCaption": " [Design]"
             }
           ]
         }
