@@ -99,6 +99,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexao.cs" />
+    <Compile Include="frmCadastrarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCadastrarUsuario.Designer.cs">
+      <DependentUpon>frmCadastrarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCadastroEstoque.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,8 +129,17 @@
     <Compile Include="frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPesquisarUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPesquisarUsuarios.Designer.cs">
+      <DependentUpon>frmPesquisarUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCadastrarUsuario.resx">
+      <DependentUpon>frmCadastrarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCadastroEstoque.resx">
       <DependentUpon>frmCadastroEstoque.cs</DependentUpon>
     </EmbeddedResource>

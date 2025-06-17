@@ -90,10 +90,11 @@
             this.dtpValidade.Location = new System.Drawing.Point(57, 293);
             this.dtpValidade.Name = "dtpValidade";
             this.dtpValidade.Size = new System.Drawing.Size(128, 29);
-            this.dtpValidade.TabIndex = 18;
+            this.dtpValidade.TabIndex = 5;
             // 
             // mktDataSaida
             // 
+            this.mktDataSaida.Enabled = false;
             this.mktDataSaida.Location = new System.Drawing.Point(581, 86);
             this.mktDataSaida.Mask = "00/00/0000";
             this.mktDataSaida.Name = "mktDataSaida";
@@ -116,7 +117,7 @@
             this.dtpDataEntrada.Location = new System.Drawing.Point(338, 86);
             this.dtpDataEntrada.Name = "dtpDataEntrada";
             this.dtpDataEntrada.Size = new System.Drawing.Size(128, 29);
-            this.dtpDataEntrada.TabIndex = 15;
+            this.dtpDataEntrada.TabIndex = 1;
             // 
             // cbbLocalizacao
             // 

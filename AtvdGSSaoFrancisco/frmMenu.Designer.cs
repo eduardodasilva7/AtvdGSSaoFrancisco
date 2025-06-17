@@ -32,6 +32,7 @@
             this.btnEstoque = new System.Windows.Forms.Button();
             this.btnCadastroProduto = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
+            this.btnCadastraUsuario = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnEstoque
@@ -75,11 +76,26 @@
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
+            // btnCadastraUsuario
+            // 
+            this.btnCadastraUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastraUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnCadastraUsuario.Image")));
+            this.btnCadastraUsuario.Location = new System.Drawing.Point(364, 12);
+            this.btnCadastraUsuario.Name = "btnCadastraUsuario";
+            this.btnCadastraUsuario.Size = new System.Drawing.Size(142, 219);
+            this.btnCadastraUsuario.TabIndex = 14;
+            this.btnCadastraUsuario.Text = "Cadastro de Usuário";
+            this.btnCadastraUsuario.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCadastraUsuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCadastraUsuario.UseVisualStyleBackColor = true;
+            this.btnCadastraUsuario.Click += new System.EventHandler(this.btnCadastraUsuario_Click);
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.btnCadastraUsuario);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnCadastroProduto);
             this.Controls.Add(this.btnEstoque);
@@ -88,7 +104,7 @@
             this.MaximizeBox = false;
             this.Name = "frmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmMenu";
+            this.Text = "GSF - Menu";
             this.Load += new System.EventHandler(this.frmMenu_Load);
             this.ResumeLayout(false);
 
@@ -99,5 +115,6 @@
         private System.Windows.Forms.Button btnEstoque;
         private System.Windows.Forms.Button btnCadastroProduto;
         private System.Windows.Forms.Button btnVoltar;
+        private System.Windows.Forms.Button btnCadastraUsuario;
     }
 }

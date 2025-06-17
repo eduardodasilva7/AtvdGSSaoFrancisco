@@ -82,7 +82,7 @@
             this.ltbEstoque.Location = new System.Drawing.Point(9, 80);
             this.ltbEstoque.Name = "ltbEstoque";
             this.ltbEstoque.Size = new System.Drawing.Size(716, 364);
-            this.ltbEstoque.TabIndex = 9;
+            this.ltbEstoque.TabIndex = 1;
             this.ltbEstoque.SelectedIndexChanged += new System.EventHandler(this.ltbEstoque_SelectedIndexChanged);
             // 
             // label9
@@ -165,7 +165,7 @@
             this.btnVoltar.Location = new System.Drawing.Point(621, 490);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(134, 59);
-            this.btnVoltar.TabIndex = 17;
+            this.btnVoltar.TabIndex = 4;
             this.btnVoltar.Text = "&Voltar";
             this.btnVoltar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnVoltar.UseVisualStyleBackColor = true;
@@ -178,7 +178,7 @@
             this.btnAlterar.Location = new System.Drawing.Point(329, 490);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(149, 59);
-            this.btnAlterar.TabIndex = 14;
+            this.btnAlterar.TabIndex = 3;
             this.btnAlterar.Text = "&Alterar";
             this.btnAlterar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAlterar.UseVisualStyleBackColor = true;
@@ -190,7 +190,7 @@
             this.btnCadastrar.Location = new System.Drawing.Point(39, 490);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(168, 59);
-            this.btnCadastrar.TabIndex = 18;
+            this.btnCadastrar.TabIndex = 2;
             this.btnCadastrar.Text = "&Cadastrar";
             this.btnCadastrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCadastrar.UseVisualStyleBackColor = true;

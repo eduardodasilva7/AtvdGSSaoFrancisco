@@ -52,5 +52,12 @@ namespace AtvdGSSaoFrancisco
             abrir.Show();
             this.Hide();
         }
+        
+        private void btnCadastraUsuario_Click(object sender, EventArgs e)
+        {
+            frmCadastrarUsuario abrir = new frmCadastrarUsuario();
+            abrir.Show();
+            this.Hide();
+        }
     }
 }
