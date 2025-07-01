@@ -45,3 +45,6 @@ C:\Users\eduardo.dsilva17\Documents\Visual Studio 2022\AtvdGSSaoFrancisco\AtvdGS
 C:\Users\eduardo.dsilva17\Documents\Visual Studio 2022\AtvdGSSaoFrancisco\AtvdGSSaoFrancisco\obj\Debug\AtvdGSSaoFrancisco.frmMenu.resources
 C:\Users\eduardo.dsilva17\Documents\Visual Studio 2022\AtvdGSSaoFrancisco\AtvdGSSaoFrancisco\obj\Debug\AtvdGSSaoFrancisco.frmLogin.resources
 C:\Users\eduardo.dsilva17\Documents\Visual Studio 2022\AtvdGSSaoFrancisco\AtvdGSSaoFrancisco\obj\Debug\AtvdGSSaoFrancisco.frmCadastrarUsuario.resources
+C:\Users\eduardo.dsilva17\Documents\Visual Studio 2022\AtvdGSSaoFrancisco\AtvdGSSaoFrancisco\obj\Debug\AtvdGSSaoFrancisco.frmPesquisarUsuarios.resources
+C:\Users\eduardo.dsilva17\Documents\Visual Studio 2022\AtvdGSSaoFrancisco\AtvdGSSaoFrancisco\bin\Debug\GenCode128.dll
+C:\Users\eduardo.dsilva17\Documents\Visual Studio 2022\AtvdGSSaoFrancisco\AtvdGSSaoFrancisco\bin\Debug\System.Drawing.Common.dll

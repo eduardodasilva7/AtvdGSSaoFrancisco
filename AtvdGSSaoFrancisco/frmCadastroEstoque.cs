@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using GenCode128;
+using System.IO;
 
 namespace AtvdGSSaoFrancisco
 {
@@ -24,15 +26,16 @@ namespace AtvdGSSaoFrancisco
         public frmCadastroEstoque()
         {
             InitializeComponent();
-            //limparCampos();
+            desabilitarCampos();
         }
 
         public frmCadastroEstoque(string nome)
         {
             InitializeComponent();
-            
             txtNome.Text = nome;
             carregarProduto(txtNome.Text);
+
+            habilitarCamposEstoque();
         }
 
         private void frmCadastroEstoque_Load(object sender, EventArgs e)
@@ -42,11 +45,77 @@ namespace AtvdGSSaoFrancisco
             RemoveMenu(hMenu, MenuCount, MF_BYCOMMAND);
         }
 
-        public int cadastrarProduto(string nome, string peso, DateTime validade, DateTime dataEntrada, string dataSaida, string categoriaProd, string quantidadeProd, string localizacaoProd)
+        public void desabilitarCampos()
+        {
+            dtpDataEntrada.Enabled = false;
+            txtNome.Enabled = false;
+            cbbCategoria.Enabled = false;
+            txtPeso.Enabled = false;
+            dtpValidade.Enabled = false;
+            txtQuantidade.Enabled = false;
+            cbbLocalizacao.Enabled = false;
+            txtCodigoBarras.Enabled = false;
+            txtLote.Enabled = false;
+            pctCodigoBarras.Enabled = false;
+            btnCadastrar.Enabled = false;
+            btnAlterar.Enabled = false;
+            btnLimpar.Enabled = false;
+
+            btnNovo.Enabled = true;
+            btnEstoque.Enabled = true;
+            btnVoltar.Enabled = true;
+            btnNovo.Focus();
+        }
+
+        public void habilitarCampos()
+        {
+            dtpDataEntrada.Enabled = true;
+            txtNome.Enabled = true;
+            cbbCategoria.Enabled = true;
+            txtPeso.Enabled = true;
+            dtpValidade.Enabled = true;
+            txtQuantidade.Enabled = true;
+            cbbLocalizacao.Enabled = true;
+            txtCodigoBarras.Enabled = true;
+            txtLote.Enabled = true;
+            pctCodigoBarras.Enabled = true;
+            btnCadastrar.Enabled = true;
+            btnLimpar.Enabled = true;
+            btnVoltar.Enabled = true;
+
+            btnAlterar.Enabled = false;
+            btnNovo.Enabled = false;
+            btnEstoque.Enabled = false;
+            txtNome.Focus();
+        }
+        public void habilitarCamposEstoque()
+        {
+            dtpDataEntrada.Enabled = true;
+            mktDataSaida.Enabled = true;
+            txtNome.Enabled = true;
+            cbbCategoria.Enabled = true;
+            txtPeso.Enabled = true;
+            dtpValidade.Enabled = true;
+            txtQuantidade.Enabled = true;
+            cbbLocalizacao.Enabled = true;
+            txtCodigoBarras.Enabled = true;
+            txtLote.Enabled = true;
+            pctCodigoBarras.Enabled = true;
+            btnCadastrar.Enabled = true;
+            btnVoltar.Enabled = true;
+            btnAlterar.Enabled = true;
+            btnEstoque.Enabled = true;
+
+            btnLimpar.Enabled = false;
+            btnNovo.Enabled = false;
+            txtNome.Focus();
+        }
+
+        public int cadastrarProduto(string nome, string peso, DateTime validade, DateTime dataEntrada, string dataSaida, string categoriaProd, string quantidadeProd, string localizacaoProd, string codigoBarras, string lote)
         {
             MySqlCommand comm = new MySqlCommand();
-            comm.CommandText = "insert into tbEstoque(nomeProd, peso, quantidadeProd, validade, dataEntrada, dataSaida, categoriaProd, localizacaoProd) " +
-                "values(@nomeProd, @peso, @quantidadeProd, @validade, @dataEntrada, @dataSaida, @categoriaProd, @localizacaoProd);";
+            comm.CommandText = "insert into tbEstoque(nomeProd, peso, quantidadeProd, validade, dataEntrada, dataSaida, categoriaProd, localizacaoProd, codigoBarras, lote) " +
+                "values(@nomeProd, @peso, @quantidadeProd, @validade, @dataEntrada, @dataSaida, @categoriaProd, @localizacaoProd, @codigoBarras, @lote);";
             comm.CommandType = CommandType.Text;
 
             comm.Parameters.Clear();
@@ -57,7 +126,10 @@ namespace AtvdGSSaoFrancisco
             comm.Parameters.Add("@dataEntrada", MySqlDbType.DateTime, 100).Value = dataEntrada;
             comm.Parameters.Add("@dataSaida", MySqlDbType.VarChar, 10).Value = dataSaida;
             comm.Parameters.Add("@categoriaProd", MySqlDbType.VarChar, 30).Value = categoriaProd;
-            comm.Parameters.Add("@localizacaoProd", MySqlDbType.VarChar, 30).Value = localizacaoProd;                                                                                                                            
+            comm.Parameters.Add("@localizacaoProd", MySqlDbType.VarChar, 30).Value = localizacaoProd;
+            comm.Parameters.Add("@codigoBarras", MySqlDbType.VarChar, 15).Value = codigoBarras;
+            comm.Parameters.Add("@lote", MySqlDbType.VarChar, 10).Value = lote;
+            
             
             comm.Connection = Conexao.obterConexao();
 
@@ -71,7 +143,7 @@ namespace AtvdGSSaoFrancisco
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            if(cadastrarProduto(txtNome.Text, txtPeso.Text, dtpValidade.Value, dtpDataEntrada.Value, mktDataSaida.Text, cbbCategoria.SelectedItem.ToString(), txtQuantidade.Text, cbbLocalizacao.SelectedItem.ToString()) == 1)
+            if(cadastrarProduto(txtNome.Text, txtPeso.Text, dtpValidade.Value, dtpDataEntrada.Value, mktDataSaida.Text, cbbCategoria.SelectedItem.ToString(), txtQuantidade.Text, cbbLocalizacao.SelectedItem.ToString(), txtCodigoBarras.Text, txtLote.Text ) == 1)
             {
                 MessageBox.Show("Produto Cadastrado com sucesso!",
                     "Menssagem do sistema",
@@ -144,6 +216,11 @@ namespace AtvdGSSaoFrancisco
                 mktDataSaida.Text = DR.GetString(6);
                 cbbCategoria.Text = DR.GetString(7);
                 cbbLocalizacao.Text = DR.GetString(8);
+                txtCodigoBarras.Text = DR.GetString(9);
+                txtLote.Text = DR.GetString(10);
+
+                
+
             }
             
 
@@ -154,7 +231,7 @@ namespace AtvdGSSaoFrancisco
         private void btnAlterar_Click(object sender, EventArgs e)
         {
             int codProd = Convert.ToInt32(txtCodigo.Text);
-            if (atulizarDados(txtNome.Text, txtPeso.Text, dtpValidade.Value, dtpDataEntrada.Value, mktDataSaida.Text, cbbCategoria.SelectedItem.ToString(), txtQuantidade.Text, cbbLocalizacao.SelectedItem.ToString(), codProd) == 1)
+            if (atulizarDados(codProd, txtNome.Text, txtPeso.Text, dtpValidade.Value, dtpDataEntrada.Value, mktDataSaida.Text, cbbCategoria.SelectedItem.ToString(), txtQuantidade.Text, cbbLocalizacao.SelectedItem.ToString(), txtCodigoBarras.Text, txtLote.Text) == 1)
             {
                 MessageBox.Show("Produto atualizado com sucesso!",
                     "Menssagem do sistema",
@@ -164,12 +241,12 @@ namespace AtvdGSSaoFrancisco
             }
         }
 
-        public int atulizarDados(string nome, string peso, DateTime validade, DateTime dataEntrada, string dataSaida, string categoriaProd, string quantidadeProd, string localizacaoProd, int codigo)
+        public int atulizarDados(int codigo, string nome, string peso, DateTime validade, DateTime dataEntrada, string dataSaida, string categoriaProd, string quantidadeProd, string localizacaoProd, string codigoBarras, string lote)
         {
           
             MySqlCommand comm = new MySqlCommand();
             comm.CommandText = "update tbEstoque set nomeProd = @nomeProd, peso = @peso, quantidadeProd = @quantidadeProd, validade = @validade, dataEntrada = @dataEntrada, " +
-                "dataSaida = @dataSaida, categoriaProd = @categoriaProd, localizacaoProd = @localizacaoProd where codProduto = @codigo;";
+                "dataSaida = @dataSaida, categoriaProd = @categoriaProd, localizacaoProd = @localizacaoProd codigoBarras = @codigoBarras, lote = @lote where codProduto = @codigo;";
             comm.CommandType = CommandType.Text;
 
             comm.Parameters.Clear();
@@ -182,6 +259,9 @@ namespace AtvdGSSaoFrancisco
             comm.Parameters.Add("@categoriaProd", MySqlDbType.VarChar, 30).Value = categoriaProd;
             comm.Parameters.Add("@localizacaoProd", MySqlDbType.VarChar, 30).Value = localizacaoProd;
             comm.Parameters.Add("@codigo", MySqlDbType.Int32).Value = codigo;
+            comm.Parameters.Add("@codigoBarras", MySqlDbType.VarChar, 15).Value = codigoBarras;
+            comm.Parameters.Add("@lote", MySqlDbType.VarChar, 10).Value = lote;
+            
 
             comm.Connection = Conexao.obterConexao();
 
@@ -191,6 +271,20 @@ namespace AtvdGSSaoFrancisco
 
             return resp;
 
+        }
+
+        private void txtCodigoBarras_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                Image imgCodigoBarras = Code128Rendering.MakeBarcodeImage(txtCodigoBarras.Text, 2, true);
+                pctCodigoBarras.Image = imgCodigoBarras;
+            }
+        }
+
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+            habilitarCampos();
         }
     }
 }

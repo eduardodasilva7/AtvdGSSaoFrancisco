@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace AtvdGSSaoFrancisco
 {
@@ -77,17 +78,7 @@ namespace AtvdGSSaoFrancisco
 
         private void ltbEstoque_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (ltbEstoque.SelectedItems != null)
-            {
-                string linha = ltbEstoque.SelectedItem.ToString();
-                string[] campos = linha.Split('|');
-
-                string nome = campos[1].Trim();
-                frmCadastroEstoque abrir = new frmCadastroEstoque(nome);
-                abrir.Show();
-                this.Hide();
-
-            }
+            
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -95,6 +86,80 @@ namespace AtvdGSSaoFrancisco
             frmMenu abrir = new frmMenu();
             abrir.Show();
             this.Hide();
+        }
+
+        private void btnApagar_Click(object sender, EventArgs e)
+        {
+            string linhaSelecionada = ltbEstoque.SelectedItem.ToString();
+
+            string[] campos = linhaSelecionada.Split('|');
+            int codigo = int.Parse(campos[0].Trim());
+
+            DialogResult resultado = MessageBox.Show(
+                "Deseja realmente apagar este produto?",
+                "Mensagem do sistema",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+                );
+            if (resultado == DialogResult.Yes) {
+                if(apagarProduto(codigo) == 1)
+                {
+                    MessageBox.Show("Produto apagado com sucesso!",
+                    "Mensagem do sistema",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
+                    ltbEstoque.Items.Remove(ltbEstoque.SelectedItem);
+                }
+                
+
+            }
+            else{
+                MessageBox.Show("Erro ao apagar produto!",
+                                    "Mensagem do sistema",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
+            }
+        }
+
+        public int apagarProduto(int codProduto)
+        {
+            MySqlCommand comm = new MySqlCommand();
+            comm.CommandText = "DELETE FROM tbestoque WHERE codProduto = @codProduto;";
+            comm.CommandType = CommandType.Text;
+
+            comm.Parameters.Clear();
+            comm.Parameters.Add("@codProduto", MySqlDbType.Int32).Value = codProduto;
+            comm.Connection = Conexao.obterConexao();
+
+            int resp = comm.ExecuteNonQuery();
+
+            Conexao.fecharConexao();
+
+            return resp;
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            if (ltbEstoque.SelectedItems != null)
+            {
+                try
+                {
+                    string linha = ltbEstoque.SelectedItem.ToString();
+                    string[] campos = linha.Split('|');
+                    string nome = campos[1].Trim();
+                    frmCadastroEstoque abrir = new frmCadastroEstoque(nome);
+                    abrir.Show();
+                    this.Hide();
+                }
+                catch(Exception) {
+                    MessageBox.Show("Selecione um produto!",
+                    "Menssagem do sistema",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information,
+                    MessageBoxDefaultButton.Button1);
+                }
+            }
         }
     }
 }

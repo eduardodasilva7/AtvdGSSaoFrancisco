@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadastrarUsuario));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gpbCadastroUsuarios = new System.Windows.Forms.GroupBox();
             this.btnFalseChecked = new System.Windows.Forms.Button();
             this.btnChecked = new System.Windows.Forms.Button();
             this.txtValidarSenha = new System.Windows.Forms.TextBox();
@@ -48,29 +48,29 @@
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.gpbCadastroUsuarios.SuspendLayout();
             this.pnlBotoes.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // gpbCadastroUsuarios
             // 
-            this.groupBox1.Controls.Add(this.btnFalseChecked);
-            this.groupBox1.Controls.Add(this.btnChecked);
-            this.groupBox1.Controls.Add(this.txtValidarSenha);
-            this.groupBox1.Controls.Add(this.lblValidarSenha);
-            this.groupBox1.Controls.Add(this.txtSenha);
-            this.groupBox1.Controls.Add(this.lblSenha);
-            this.groupBox1.Controls.Add(this.txtUsuario);
-            this.groupBox1.Controls.Add(this.lblUsuario);
-            this.groupBox1.Controls.Add(this.txtCodigo);
-            this.groupBox1.Controls.Add(this.lblCodigo);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(760, 231);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Cadastro de Usuários";
+            this.gpbCadastroUsuarios.Controls.Add(this.btnFalseChecked);
+            this.gpbCadastroUsuarios.Controls.Add(this.btnChecked);
+            this.gpbCadastroUsuarios.Controls.Add(this.txtValidarSenha);
+            this.gpbCadastroUsuarios.Controls.Add(this.lblValidarSenha);
+            this.gpbCadastroUsuarios.Controls.Add(this.txtSenha);
+            this.gpbCadastroUsuarios.Controls.Add(this.lblSenha);
+            this.gpbCadastroUsuarios.Controls.Add(this.txtUsuario);
+            this.gpbCadastroUsuarios.Controls.Add(this.lblUsuario);
+            this.gpbCadastroUsuarios.Controls.Add(this.txtCodigo);
+            this.gpbCadastroUsuarios.Controls.Add(this.lblCodigo);
+            this.gpbCadastroUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpbCadastroUsuarios.Location = new System.Drawing.Point(12, 12);
+            this.gpbCadastroUsuarios.Name = "gpbCadastroUsuarios";
+            this.gpbCadastroUsuarios.Size = new System.Drawing.Size(845, 231);
+            this.gpbCadastroUsuarios.TabIndex = 0;
+            this.gpbCadastroUsuarios.TabStop = false;
+            this.gpbCadastroUsuarios.Text = "Cadastro de Usuários";
             // 
             // btnFalseChecked
             // 
@@ -177,74 +177,96 @@
             this.pnlBotoes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlBotoes.Location = new System.Drawing.Point(12, 271);
             this.pnlBotoes.Name = "pnlBotoes";
-            this.pnlBotoes.Size = new System.Drawing.Size(760, 49);
+            this.pnlBotoes.Size = new System.Drawing.Size(845, 49);
             this.pnlBotoes.TabIndex = 1;
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Location = new System.Drawing.Point(651, 3);
+            this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoltar.Image = ((System.Drawing.Image)(resources.GetObject("btnVoltar.Image")));
+            this.btnVoltar.Location = new System.Drawing.Point(723, 3);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(102, 42);
+            this.btnVoltar.Size = new System.Drawing.Size(114, 42);
             this.btnVoltar.TabIndex = 6;
             this.btnVoltar.Text = "Voltar";
+            this.btnVoltar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnVoltar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(543, 3);
+            this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpar.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpar.Image")));
+            this.btnLimpar.Location = new System.Drawing.Point(603, 3);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(102, 42);
+            this.btnLimpar.Size = new System.Drawing.Size(114, 42);
             this.btnLimpar.TabIndex = 5;
             this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(435, 4);
+            this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
+            this.btnExcluir.Location = new System.Drawing.Point(483, 4);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(102, 42);
+            this.btnExcluir.Size = new System.Drawing.Size(114, 42);
             this.btnExcluir.TabIndex = 4;
             this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnExcluir.UseVisualStyleBackColor = true;
             // 
             // btnPesquisar
             // 
-            this.btnPesquisar.Location = new System.Drawing.Point(327, 3);
+            this.btnPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPesquisar.Image = ((System.Drawing.Image)(resources.GetObject("btnPesquisar.Image")));
+            this.btnPesquisar.Location = new System.Drawing.Point(363, 3);
             this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(102, 42);
+            this.btnPesquisar.Size = new System.Drawing.Size(114, 42);
             this.btnPesquisar.TabIndex = 3;
             this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPesquisar.UseVisualStyleBackColor = true;
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(219, 4);
+            this.btnAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlterar.Image = ((System.Drawing.Image)(resources.GetObject("btnAlterar.Image")));
+            this.btnAlterar.Location = new System.Drawing.Point(243, 2);
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(102, 42);
+            this.btnAlterar.Size = new System.Drawing.Size(114, 42);
             this.btnAlterar.TabIndex = 2;
             this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAlterar.UseVisualStyleBackColor = true;
-
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(111, 4);
+            this.btnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCadastrar.Image")));
+            this.btnCadastrar.Location = new System.Drawing.Point(123, 4);
             this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(102, 42);
+            this.btnCadastrar.Size = new System.Drawing.Size(114, 42);
             this.btnCadastrar.TabIndex = 1;
             this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // btnNovo
             // 
+            this.btnNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNovo.Image = ((System.Drawing.Image)(resources.GetObject("btnNovo.Image")));
             this.btnNovo.Location = new System.Drawing.Point(3, 4);
             this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(102, 42);
+            this.btnNovo.Size = new System.Drawing.Size(114, 42);
             this.btnNovo.TabIndex = 0;
             this.btnNovo.Text = "Novo";
+            this.btnNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNovo.UseVisualStyleBackColor = true;
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
@@ -252,17 +274,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 332);
+            this.ClientSize = new System.Drawing.Size(860, 332);
             this.Controls.Add(this.pnlBotoes);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gpbCadastroUsuarios);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCadastrarUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GSF - Cadastrar do Usuário";
             this.Load += new System.EventHandler(this.frmCadastrarUsuario_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gpbCadastroUsuarios.ResumeLayout(false);
+            this.gpbCadastroUsuarios.PerformLayout();
             this.pnlBotoes.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -270,7 +292,7 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gpbCadastroUsuarios;
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Label lblSenha;
         private System.Windows.Forms.TextBox txtUsuario;

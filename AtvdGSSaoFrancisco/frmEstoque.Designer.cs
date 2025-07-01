@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEstoque));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gpbEstoque = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.ltbEstoque = new System.Windows.Forms.ListBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -43,28 +43,29 @@
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.btnApagar = new System.Windows.Forms.Button();
+            this.gpbEstoque.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // gpbEstoque
             // 
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.ltbEstoque);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.groupBox1.Location = new System.Drawing.Point(30, 13);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(731, 449);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Estoque";
+            this.gpbEstoque.Controls.Add(this.label1);
+            this.gpbEstoque.Controls.Add(this.ltbEstoque);
+            this.gpbEstoque.Controls.Add(this.label9);
+            this.gpbEstoque.Controls.Add(this.label8);
+            this.gpbEstoque.Controls.Add(this.label7);
+            this.gpbEstoque.Controls.Add(this.label6);
+            this.gpbEstoque.Controls.Add(this.label5);
+            this.gpbEstoque.Controls.Add(this.label4);
+            this.gpbEstoque.Controls.Add(this.label3);
+            this.gpbEstoque.Controls.Add(this.label2);
+            this.gpbEstoque.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.gpbEstoque.Location = new System.Drawing.Point(1, 13);
+            this.gpbEstoque.Name = "gpbEstoque";
+            this.gpbEstoque.Size = new System.Drawing.Size(785, 449);
+            this.gpbEstoque.TabIndex = 0;
+            this.gpbEstoque.TabStop = false;
+            this.gpbEstoque.Text = "Estoque";
             // 
             // label1
             // 
@@ -81,14 +82,14 @@
             this.ltbEstoque.ItemHeight = 18;
             this.ltbEstoque.Location = new System.Drawing.Point(9, 80);
             this.ltbEstoque.Name = "ltbEstoque";
-            this.ltbEstoque.Size = new System.Drawing.Size(716, 364);
+            this.ltbEstoque.Size = new System.Drawing.Size(770, 364);
             this.ltbEstoque.TabIndex = 1;
             this.ltbEstoque.SelectedIndexChanged += new System.EventHandler(this.ltbEstoque_SelectedIndexChanged);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(632, 46);
+            this.label9.Location = new System.Drawing.Point(683, 46);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(88, 18);
             this.label9.TabIndex = 8;
@@ -97,7 +98,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(123, 45);
+            this.label8.Location = new System.Drawing.Point(133, 45);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(43, 18);
             this.label8.TabIndex = 7;
@@ -106,7 +107,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(448, 45);
+            this.label7.Location = new System.Drawing.Point(477, 45);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(100, 18);
             this.label7.TabIndex = 6;
@@ -115,7 +116,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(172, 45);
+            this.label6.Location = new System.Drawing.Point(192, 45);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(83, 18);
             this.label6.TabIndex = 5;
@@ -124,7 +125,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(554, 46);
+            this.label5.Location = new System.Drawing.Point(588, 46);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(72, 18);
             this.label5.TabIndex = 4;
@@ -134,7 +135,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label4.Location = new System.Drawing.Point(330, 46);
+            this.label4.Location = new System.Drawing.Point(350, 46);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(112, 17);
             this.label4.TabIndex = 3;
@@ -143,7 +144,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(261, 45);
+            this.label3.Location = new System.Drawing.Point(281, 44);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 18);
             this.label3.TabIndex = 2;
@@ -175,13 +176,14 @@
             // 
             this.btnAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAlterar.Image = ((System.Drawing.Image)(resources.GetObject("btnAlterar.Image")));
-            this.btnAlterar.Location = new System.Drawing.Point(329, 490);
+            this.btnAlterar.Location = new System.Drawing.Point(247, 490);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(149, 59);
             this.btnAlterar.TabIndex = 3;
             this.btnAlterar.Text = "&Alterar";
             this.btnAlterar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnCadastrar
             // 
@@ -196,15 +198,30 @@
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
+            // btnApagar
+            // 
+            this.btnApagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnApagar.Image = ((System.Drawing.Image)(resources.GetObject("btnApagar.Image")));
+            this.btnApagar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnApagar.Location = new System.Drawing.Point(429, 490);
+            this.btnApagar.Name = "btnApagar";
+            this.btnApagar.Size = new System.Drawing.Size(149, 59);
+            this.btnApagar.TabIndex = 5;
+            this.btnApagar.Text = "Apagar&";
+            this.btnApagar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnApagar.UseVisualStyleBackColor = true;
+            this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
+            // 
             // frmEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.btnApagar);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnAlterar);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gpbEstoque);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -213,15 +230,15 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmEstoque";
             this.Load += new System.EventHandler(this.frmEstoque_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gpbEstoque.ResumeLayout(false);
+            this.gpbEstoque.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gpbEstoque;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -235,5 +252,6 @@
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnApagar;
     }
 }

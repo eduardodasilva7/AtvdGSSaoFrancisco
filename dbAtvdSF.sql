@@ -13,6 +13,9 @@ create table tbEstoque (
     dataSaida char(10),
     categoriaProd varchar(30) not null,
     localizacaoProd varchar(30) not null,
+    codigoBarras int not null,
+    lote varchar(10) not null,
+    imagemProduto longBlob not null,
     primary key(codProduto)
 );
 
@@ -24,6 +27,11 @@ create table tbUsuario(
     senha varchar(12) not null,
     primary key(codUsu)
 );
+
+create table tbFotos(
+    codFotos int not null primary key,
+    imagem 
+)
 
 
 -- update tbEstoque set nomeProd = 'teste', peso = '10', quantidadeProd = 4, validade = '2027-12-09', dataEntrada = '2025-05-10', dataSaida = '10/12/2025', categoriaProd = 'Diverso', localizacaoProd = 'Drive Thru' where codProduto = 2;
