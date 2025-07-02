@@ -129,5 +129,14 @@ namespace AtvdGSSaoFrancisco
         {
             limparCampos();
         }
+
+        private void ltbPesquisar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string nome = ltbPesquisar.SelectedItem.ToString();
+
+            frmCadastrarUsuario abrir = new frmCadastrarUsuario(nome);
+            abrir.Show();
+            this.Hide();
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace AtvdGSSaoFrancisco
 {
-    partial class frmPesquisarUsuarios
+    partial class frmPesquisarVoluntarios
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPesquisarUsuarios));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPesquisarVoluntarios));
+            this.btnLimpar = new System.Windows.Forms.Button();
             this.gpbPesquisarPor = new System.Windows.Forms.GroupBox();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.lblDescricao = new System.Windows.Forms.Label();
@@ -36,9 +37,20 @@
             this.rdbCodigo = new System.Windows.Forms.RadioButton();
             this.ltbPesquisar = new System.Windows.Forms.ListBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
-            this.btnLimpar = new System.Windows.Forms.Button();
             this.gpbPesquisarPor.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // btnLimpar
+            // 
+            this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpar.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpar.Image")));
+            this.btnLimpar.Location = new System.Drawing.Point(418, 158);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(233, 83);
+            this.btnLimpar.TabIndex = 20;
+            this.btnLimpar.Text = "&Limpar";
+            this.btnLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLimpar.UseVisualStyleBackColor = true;
             // 
             // gpbPesquisarPor
             // 
@@ -47,10 +59,10 @@
             this.gpbPesquisarPor.Controls.Add(this.rdbNome);
             this.gpbPesquisarPor.Controls.Add(this.rdbCodigo);
             this.gpbPesquisarPor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbPesquisarPor.Location = new System.Drawing.Point(12, 3);
+            this.gpbPesquisarPor.Location = new System.Drawing.Point(12, 12);
             this.gpbPesquisarPor.Name = "gpbPesquisarPor";
             this.gpbPesquisarPor.Size = new System.Drawing.Size(381, 140);
-            this.gpbPesquisarPor.TabIndex = 13;
+            this.gpbPesquisarPor.TabIndex = 17;
             this.gpbPesquisarPor.TabStop = false;
             this.gpbPesquisarPor.Text = "Pesquisar por";
             // 
@@ -80,7 +92,6 @@
             this.rdbNome.TabIndex = 2;
             this.rdbNome.Text = "Nome";
             this.rdbNome.UseVisualStyleBackColor = true;
-            this.rdbNome.CheckedChanged += new System.EventHandler(this.rdbNome_CheckedChanged);
             // 
             // rdbCodigo
             // 
@@ -91,61 +102,45 @@
             this.rdbCodigo.TabIndex = 1;
             this.rdbCodigo.Text = "Código";
             this.rdbCodigo.UseVisualStyleBackColor = true;
-            this.rdbCodigo.CheckedChanged += new System.EventHandler(this.rdbCodigo_CheckedChanged);
             // 
             // ltbPesquisar
             // 
+            this.ltbPesquisar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ltbPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ltbPesquisar.FormattingEnabled = true;
             this.ltbPesquisar.ItemHeight = 20;
-            this.ltbPesquisar.Location = new System.Drawing.Point(399, 12);
+            this.ltbPesquisar.Location = new System.Drawing.Point(399, 21);
             this.ltbPesquisar.Name = "ltbPesquisar";
-            this.ltbPesquisar.Size = new System.Drawing.Size(473, 124);
-            this.ltbPesquisar.TabIndex = 14;
-            this.ltbPesquisar.SelectedIndexChanged += new System.EventHandler(this.ltbPesquisar_SelectedIndexChanged);
+            this.ltbPesquisar.Size = new System.Drawing.Size(473, 122);
+            this.ltbPesquisar.TabIndex = 18;
             // 
             // btnPesquisar
             // 
             this.btnPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPesquisar.Image = ((System.Drawing.Image)(resources.GetObject("btnPesquisar.Image")));
-            this.btnPesquisar.Location = new System.Drawing.Point(142, 149);
+            this.btnPesquisar.Location = new System.Drawing.Point(142, 158);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(241, 83);
-            this.btnPesquisar.TabIndex = 15;
+            this.btnPesquisar.TabIndex = 19;
             this.btnPesquisar.Text = "&Pesquisar";
             this.btnPesquisar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPesquisar.UseVisualStyleBackColor = true;
-            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
-            // btnLimpar
-            // 
-            this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpar.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpar.Image")));
-            this.btnLimpar.Location = new System.Drawing.Point(418, 149);
-            this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(233, 83);
-            this.btnLimpar.TabIndex = 16;
-            this.btnLimpar.Text = "&Limpar";
-            this.btnLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLimpar.UseVisualStyleBackColor = true;
-            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
-            // 
-            // frmPesquisarUsuarios
+            // frmPesquisarVoluntarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 244);
+            this.ClientSize = new System.Drawing.Size(885, 262);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.gpbPesquisarPor);
             this.Controls.Add(this.ltbPesquisar);
             this.Controls.Add(this.btnPesquisar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "frmPesquisarUsuarios";
+            this.Name = "frmPesquisarVoluntarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Pesquisar Usuários";
-            this.Load += new System.EventHandler(this.frmPesquisarUsuarios_Load);
+            this.Text = "GSF - Pesquisar Voluntarios";
+            this.Load += new System.EventHandler(this.frmPesquisarVoluntarios_Load);
             this.gpbPesquisarPor.ResumeLayout(false);
             this.gpbPesquisarPor.PerformLayout();
             this.ResumeLayout(false);
@@ -154,6 +149,7 @@
 
         #endregion
 
+        private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.GroupBox gpbPesquisarPor;
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Label lblDescricao;
@@ -161,6 +157,5 @@
         private System.Windows.Forms.RadioButton rdbCodigo;
         private System.Windows.Forms.ListBox ltbPesquisar;
         private System.Windows.Forms.Button btnPesquisar;
-        private System.Windows.Forms.Button btnLimpar;
     }
 }

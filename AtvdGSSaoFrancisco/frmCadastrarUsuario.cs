@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -26,7 +27,15 @@ namespace AtvdGSSaoFrancisco
         public frmCadastrarUsuario()
         {
             InitializeComponent();
-            desativerCampos();
+            desativarCampos();
+        }
+
+        public frmCadastrarUsuario(string nome)
+        {
+            InitializeComponent();
+            txtUsuario.Text = nome;
+            buscarUsuarioExistente(nome);
+            ativarCamposPesquisa();
         }
 
         private void frmCadastrarUsuario_Load(object sender, EventArgs e)
@@ -36,7 +45,29 @@ namespace AtvdGSSaoFrancisco
             RemoveMenu(hMenu, MenuCount, MF_BYCOMMAND);
         }
 
-        public void desativerCampos()
+        public void buscarUsuarioExistente(string nome)
+        {
+            MySqlCommand comm = new MySqlCommand();
+            comm.CommandText = "SELECT * FROM tbusuario WHERE usuario = @usuario;";
+            comm.CommandType = CommandType.Text;
+
+            comm.Parameters.Clear();
+            comm.Parameters.Add("@usuario", MySqlDbType.VarChar, 30).Value = nome;
+
+            comm.Connection = Conexao.obterConexao();
+
+            MySqlDataReader DR;
+            DR = comm.ExecuteReader();
+            DR.Read();
+            txtCodigo.Text = DR.GetInt32(0).ToString();
+            txtUsuario.Text = DR.GetString(1);
+            txtSenha.Text = DR.GetString(2);
+
+            Conexao.fecharConexao();
+        }
+
+        
+        public void desativarCampos()
         {
             txtUsuario.Enabled = false; 
             txtSenha.Enabled = false;   
@@ -45,7 +76,9 @@ namespace AtvdGSSaoFrancisco
             btnCadastrar.Enabled = false;   
             btnExcluir.Enabled = false; 
             btnLimpar.Enabled = false;  
-            
+            btnNovo.Enabled = true;
+            btnPesquisar.Enabled = true;
+            btnVoltar.Enabled = true;
         }
 
         public void ativarCampos()
@@ -54,12 +87,28 @@ namespace AtvdGSSaoFrancisco
             txtUsuario.Enabled = true;
             txtSenha.Enabled = true;
             txtValidarSenha.Enabled = true;
-            btnAlterar.Enabled = true;
+            btnAlterar.Enabled = false;
             btnCadastrar.Enabled = true;
-            btnExcluir.Enabled = true;
+            btnExcluir.Enabled = false;
             btnLimpar.Enabled = true;
             txtUsuario.Focus();
         }
+        public void ativarCamposPesquisa()
+        {
+            txtUsuario.Enabled = true;
+            txtSenha.Enabled = true;
+            txtValidarSenha.Enabled = true;
+            btnAlterar.Enabled = true;
+            btnPesquisar.Enabled = true;
+            btnExcluir.Enabled = true;
+            btnVoltar.Enabled = true;
+
+            btnNovo.Enabled = false;
+            btnCadastrar.Enabled = false;
+            btnLimpar.Enabled = false;
+            txtUsuario.Focus();
+        }
+
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
@@ -101,51 +150,53 @@ namespace AtvdGSSaoFrancisco
             }
             else
             {
-                if (txtSenha.Text.Length < 12 || txtValidarSenha.Text.Length < 12)
-                {
-                    MessageBox.Show("A senha tem que ser igual a 12 caracteres",
-                       "Mensagem do sistema",
-                      MessageBoxButtons.OK,
-                      MessageBoxIcon.Error,
-                      MessageBoxDefaultButton.Button1
-                      );
-                }
-                else
-                {
-                    if (txtSenha.Equals(txtValidarSenha.Text))
+                
+                    if (txtSenha.Text.Length < 12 || txtValidarSenha.Text.Length < 12)
                     {
-
-                        if (cadastrarUsuario(usuario, senha) == 1)
-                        {
-                            MessageBox.Show("Cadastrado com sucesso.",
-                                         "Mensagem do sistema",
-                                        MessageBoxButtons.OK,
-                                        MessageBoxIcon.Information,
-                                        MessageBoxDefaultButton.Button1
-                                        );
-                            desativerCampos();
-                            limparCampos();
-                        }
-                        else
-                        {
-                                MessageBox.Show("Erro ao cadastrar!",
+                        MessageBox.Show("A senha tem que ser igual a 12 caracteres",
                            "Mensagem do sistema",
                           MessageBoxButtons.OK,
                           MessageBoxIcon.Error,
                           MessageBoxDefaultButton.Button1
-                      );
-                        }
+                          );
                     }
                     else
                     {
-                        MessageBox.Show("A senha não é igual!",
-                       "Mensagem do sistema",
-                      MessageBoxButtons.OK,
-                      MessageBoxIcon.Error,
-                      MessageBoxDefaultButton.Button1
+                        if (txtValidarSenha.Text.Equals(txtSenha.Text))
+                        {
+
+                            if (cadastrarUsuario(usuario, senha) == 1)
+                            {
+                                MessageBox.Show("Cadastrado com sucesso.",
+                                             "Mensagem do sistema",
+                                            MessageBoxButtons.OK,
+                                            MessageBoxIcon.Information,
+                                            MessageBoxDefaultButton.Button1
+                                            );
+                                desativarCampos();
+                                limparCampos();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Erro ao cadastrar!",
+                               "Mensagem do sistema",
+                              MessageBoxButtons.OK,
+                              MessageBoxIcon.Error,
+                              MessageBoxDefaultButton.Button1
                       );
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("A senha não é igual!",
+                           "Mensagem do sistema",
+                          MessageBoxButtons.OK,
+                          MessageBoxIcon.Error,
+                          MessageBoxDefaultButton.Button1
+                          );
+                        }
                     }
-                }
+                
             }
         }
 
@@ -185,6 +236,63 @@ namespace AtvdGSSaoFrancisco
             limparCampos();
         }
 
-        
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            frmPesquisarUsuarios abrir = new frmPesquisarUsuarios();    
+            abrir.Show();
+            this.Hide();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            DialogResult resp = MessageBox.Show("Deseja excluir?",
+                "Mensagem do sistema",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2);
+
+            if (resp == DialogResult.OK)
+            {
+                if( deletarUsuario(Convert.ToInt32(txtCodigo.Text)) == 1)
+                {
+                    MessageBox.Show("Excluido com sucesso!!!",
+                        "Mensagem do sistema",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information,
+                        MessageBoxDefaultButton.Button1);
+                    limparCampos();
+                    desativarCampos();
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao excluir.",
+                        "Mensagem do sistema",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error,
+                        MessageBoxDefaultButton.Button1);
+                }
+            }
+        }
+
+        public int deletarUsuario(int codigo)
+        {
+            MySqlCommand comm = new MySqlCommand();
+            comm.CommandText = "DELETE FROM tbusuario WHERE codUsu = @codigo;";
+            comm.CommandType = CommandType.Text;
+
+            comm.Parameters.Clear();
+            comm.Parameters.Add("@codigo", MySqlDbType.Int32).Value = codigo;
+            
+
+            comm.Connection = Conexao.obterConexao();
+
+            int resp = comm.ExecuteNonQuery();
+
+            Conexao.fecharConexao();
+
+            limparCampos();
+            desativarCampos();
+            return resp;
+        }
     }
 }

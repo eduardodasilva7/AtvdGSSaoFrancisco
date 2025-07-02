@@ -98,10 +98,12 @@
             // 
             // txtValidarSenha
             // 
+            this.txtValidarSenha.Font = new System.Drawing.Font("Wingdings", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.txtValidarSenha.Location = new System.Drawing.Point(512, 143);
             this.txtValidarSenha.MaxLength = 12;
             this.txtValidarSenha.Name = "txtValidarSenha";
-            this.txtValidarSenha.Size = new System.Drawing.Size(180, 26);
+            this.txtValidarSenha.PasswordChar = 'l';
+            this.txtValidarSenha.Size = new System.Drawing.Size(180, 25);
             this.txtValidarSenha.TabIndex = 7;
             this.txtValidarSenha.TextChanged += new System.EventHandler(this.txtValidarSenha_TextChanged);
             // 
@@ -116,10 +118,12 @@
             // 
             // txtSenha
             // 
+            this.txtSenha.Font = new System.Drawing.Font("Wingdings", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.txtSenha.Location = new System.Drawing.Point(284, 143);
             this.txtSenha.MaxLength = 12;
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(180, 26);
+            this.txtSenha.PasswordChar = 'l';
+            this.txtSenha.Size = new System.Drawing.Size(180, 25);
             this.txtSenha.TabIndex = 5;
             // 
             // lblSenha
@@ -219,6 +223,7 @@
             this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnPesquisar
             // 
@@ -231,6 +236,7 @@
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // btnAlterar
             // 
