@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.IO;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace AtvdGSSaoFrancisco
 {
@@ -29,6 +30,16 @@ namespace AtvdGSSaoFrancisco
         {
             InitializeComponent();
             desabilitarCampos();
+            carregarFuncoes();
+        }
+
+        public frmVoluntarios(string nome)
+        {
+            InitializeComponent();
+            desabilitarCampos();
+            carregarFuncoes();
+            txtNome.Text = nome;
+            carregaVoluntario(nome);
         }
 
         private void frmVoluntarios_Load(object sender, EventArgs e)
@@ -50,7 +61,7 @@ namespace AtvdGSSaoFrancisco
             txtComplemento.Clear();
             mktCEP.Clear();
             mktCelular.Clear();
-            cbbAtribuicoes.Text = "";
+            cbbFuncao.Text = "";
             cbbEstado.Text = "";
             ckbAtivo.Checked = false;
             dtpData.Value = DateTime.Now;
@@ -58,7 +69,7 @@ namespace AtvdGSSaoFrancisco
             btnCadastrar.Enabled = false;
             btnExcluir.Enabled = false;
             btnAlterar.Enabled = false;
-            btnLimpar.Enabled = true;
+            btnSalvar.Enabled = true;
             txtNome.Focus();
             ptbFoto.Image = null;
         }
@@ -75,7 +86,7 @@ namespace AtvdGSSaoFrancisco
             txtComplemento.Enabled = false;
             mktCEP.Enabled = false;
             mktCelular.Enabled = false;
-            cbbAtribuicoes.Enabled = false;
+            cbbFuncao.Enabled = false;
             cbbEstado.Enabled = false;
             ckbAtivo.Enabled = false;
             dtpData.Enabled = false;
@@ -84,7 +95,7 @@ namespace AtvdGSSaoFrancisco
             btnAlterar.Enabled = false;
             btnExcluir.Enabled = false;
             btnLimpar.Enabled = false;
-            btnLimparImagem.Enabled = false;
+            btnSalvar.Enabled = false;
             btnInserir.Enabled = false;
 
             btnNovo.Enabled = true;
@@ -94,7 +105,7 @@ namespace AtvdGSSaoFrancisco
 
         public void habilitarCampos()
         {
-            txtCodigo.Enabled = true;
+            txtCodigo.Enabled = false;
             txtNome.Enabled = true;
             txtEmail.Enabled = true;
             txtEndereco.Enabled = true;
@@ -104,7 +115,7 @@ namespace AtvdGSSaoFrancisco
             txtComplemento.Enabled = true;
             mktCEP.Enabled = true;
             mktCelular.Enabled = true;
-            cbbAtribuicoes.Enabled = true;
+            cbbFuncao.Enabled = true;
             cbbEstado.Enabled = true;
             ckbAtivo.Enabled = true;
             dtpData.Enabled = true;
@@ -114,7 +125,7 @@ namespace AtvdGSSaoFrancisco
             btnAlterar.Enabled = false;
             btnExcluir.Enabled = false;
             btnLimpar.Enabled = true;
-            btnLimparImagem.Enabled = true;
+            btnSalvar.Enabled = true;
             btnInserir.Enabled = true;
 
             btnNovo.Enabled = false;
@@ -134,7 +145,7 @@ namespace AtvdGSSaoFrancisco
             txtComplemento.Enabled = true;
             mktCEP.Enabled = true;
             mktCelular.Enabled = true;
-            cbbAtribuicoes.Enabled = true;
+            cbbFuncao.Enabled = true;
             cbbEstado.Enabled = true;
             ckbAtivo.Enabled = true;
             dtpData.Enabled = true;
@@ -144,7 +155,7 @@ namespace AtvdGSSaoFrancisco
             btnAlterar.Enabled = true;
             btnExcluir.Enabled = true;
             btnLimpar.Enabled = false;
-            btnLimparImagem.Enabled = true;
+            btnSalvar.Enabled = true;
             btnInserir.Enabled = true;
 
             btnNovo.Enabled = false;
@@ -163,17 +174,23 @@ namespace AtvdGSSaoFrancisco
             this.Hide();
         }
 
-        public int cadastrarVoluntario(string nome, string email, string telCel, string endereco, string numero, string cep, string complemento, string bairro, string cidade, string estado, int codFunc, DateTime data, DateTime hora, int status, int codFotos)
+        public void carregaVoluntario(string nome)
+        {
+
+        }
+
+        public int cadastrarVoluntario(string nome, string email, string telCel, string endereco, string numero, string cep, string complemento, string bairro, string cidade, string estado, int codFunc, DateTime data, DateTime hora, int status, byte[] fotos)
         {
             MySqlCommand comm = new MySqlCommand();
-            comm.CommandText = "insert into tbVoluntarios(nome,email,telCel,endereco,numero,cep,complemento,bairro,cidade,estado,codFunc,data,hora,status,codFotos)" +
-                "values(@nome,@email,@telCel,@endereco,@numero,@cep,@complemento,@bairro,@cidade,@estado,@codFunc,@data,@hora,@status,@codFotos);";
+            comm.CommandText = "insert into tbVoluntarios(nome,email,telCel,endereco,numero,cep,complemento,bairro,cidade,estado,codFunc,data,hora,status,fotos)" +
+                "values(@nome,@email,@telCel,@endereco,@numero,@cep,@complemento,@bairro,@cidade,@estado,@codFunc,@data,@hora,@status,@fotos);";
             comm.CommandType = CommandType.Text;
 
             comm.Parameters.Clear();
             comm.Parameters.Add("@nome", MySqlDbType.VarChar, 100).Value = nome;
             comm.Parameters.Add("@email", MySqlDbType.VarChar, 50).Value = email;
             comm.Parameters.Add("@telCel", MySqlDbType.VarChar, 15).Value = telCel;
+            comm.Parameters.Add("endereco", MySqlDbType.VarChar, 100).Value = endereco;
             comm.Parameters.Add("@numero", MySqlDbType.VarChar, 5).Value = numero;
             comm.Parameters.Add("@cep", MySqlDbType.VarChar, 9).Value = cep;
             comm.Parameters.Add("@complemento", MySqlDbType.VarChar, 50).Value = complemento;
@@ -184,7 +201,7 @@ namespace AtvdGSSaoFrancisco
             comm.Parameters.Add("@data", MySqlDbType.DateTime).Value = data;
             comm.Parameters.Add("@hora", MySqlDbType.DateTime).Value = hora;
             comm.Parameters.Add("@status", MySqlDbType.Int32).Value = status;
-            comm.Parameters.Add("@codFotos", MySqlDbType.Int32).Value = codFotos;
+            comm.Parameters.Add("@fotos", MySqlDbType.LongBlob).Value = fotos;
 
 
             comm.Connection = Conexao.obterConexao();
@@ -196,71 +213,105 @@ namespace AtvdGSSaoFrancisco
         }
 
         string enderecoImagem;
-        public void cadastrarFoto()
+        
+        private void btnInserir_Click(object sender, EventArgs e)
         {
-            byte[] imagem = null;
-            FileStream fs = new FileStream(enderecoImagem, FileMode.Open, FileAccess.Read);
-            BinaryReader br = new BinaryReader(fs);
-            imagem = br.ReadBytes((int)fs.Length);
-
-
-            MySqlCommand comm = new MySqlCommand();
-            comm.CommandText = "INSERT INTO tbfotos(imagem, enderecoImagem) VALUES (@imagem, @enderecoImagem);";
-            comm.CommandType = CommandType.Text;
-
-            comm.Parameters.Clear();
-            comm.Parameters.Add("@imagem", MySqlDbType.LongBlob).Value = imagem;
-            comm.Parameters.Add().Value = ;
-            
-            comm.Connection = Conexao
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "JPG Files(*.jpg)|*.jpg|PNG Files(*.png)|*.png|AllFiles(*.*) | *.*";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                string foto = dialog.FileName.ToString();
+                enderecoImagem = foto;
+                ptbFoto.ImageLocation = foto;
+                txtNome.Focus();
+            }
         }
 
-        /*
-         
-         private void btnSalvarFotos_Click(object sender, EventArgs e)
+        public byte[] salvarFotos()
         {
-            if (pctFotos.Image != null)
+            byte[] imagem_byte = null;
+
+            FileStream fs = new FileStream(enderecoImagem,
+                FileMode.Open, FileAccess.Read);
+
+            BinaryReader br = new BinaryReader(fs);
+
+            imagem_byte = br.ReadBytes((int)fs.Length);
+
+            return imagem_byte;
+        }
+        
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            int status = 0;
+            if (ckbAtivo.Checked)
             {
-
-
-                byte[] imagem_byte = null;
-
-                FileStream fs = new FileStream(this.txtBuscaFotos.Text, FileMode.Open, FileAccess.Read);
-
-                BinaryReader br = new BinaryReader(fs);
-
-                imagem_byte = br.ReadBytes((int)fs.Length);
-
-                MySqlCommand comm = new MySqlCommand();
-                comm.CommandText = "insert into tbfotos(nome,campo_imagem)values(@nome,@campo_imagem);";
-                comm.CommandType = CommandType.Text;
-
-                comm.Parameters.Clear();
-                comm.Parameters.Add("@campo_imagem", MySqlDbType.LongBlob).Value = imagem_byte;
-                comm.Parameters.Add("@nome", MySqlDbType.VarChar, 100).Value = txtNome.Text;
-
-                comm.Connection = Conexao.obterConexao();
-
-                int resp = comm.ExecuteNonQuery();
-
-                MessageBox.Show("Foto salva no banco de dados!!! " + resp);
-                desabilitarCampos();
-                limparCamposSalvar();
-                btnInserirFotos.Enabled = true;
-
-                Conexao.fecharConexao();
+                status = 1;
             }
             else
             {
-                MessageBox.Show("Favor inserrir um texto ou uma imagem",
-                    "Mensagem do sistema",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error,
-                    MessageBoxDefaultButton.Button1);
+                status = 0;
             }
-
+            if(cadastrarVoluntario(txtNome.Text, txtEmail.Text, mktCelular.Text, txtEndereco.Text, txtNumero.Text, mktCEP.Text, txtComplemento.Text, txtBairro.Text, txtCidade.Text, cbbEstado.Text, codFunc, dtpData.Value, dtpHora.Value, status, salvarFotos()) == 1)
+            {
+                MessageBox.Show("Cadastrado com sucesso.",
+                    "Messagem do sistema",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information,
+                    MessageBoxDefaultButton.Button1);
+                limparCampos();
+                desabilitarCampos();
+            }
         }
-         */
 
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            frmPesquisarVoluntarios abrir = new frmPesquisarVoluntarios();
+            abrir.Show();
+            this.Hide();
+        }
+
+        public void carregarFuncoes()
+        {
+            MySqlCommand comm = new MySqlCommand();
+            comm.CommandText = "select * from tbFuncoes;";
+            comm.CommandType = CommandType.Text;
+
+            comm.Connection = Conexao.obterConexao();
+            MySqlDataReader DR;
+            DR = comm.ExecuteReader();
+
+            while (DR.Read())
+            {
+                cbbFuncao.Items.Add(DR.GetString(1));
+            }
+            Conexao.fecharConexao();
+        }
+
+        int codFunc;
+
+        public int buscaCodigoFuncao(string descricao)
+        {
+            MySqlCommand comm = new MySqlCommand();
+            comm.CommandText = "select codFunc from tbfuncoes where descricao = @descricao;";
+            comm.CommandType = CommandType.Text;
+
+            comm.Parameters.Clear();
+            comm.Parameters.Add("@descricao", MySqlDbType.VarChar, 50).Value = descricao;
+
+            comm.Connection = Conexao.obterConexao();
+            MySqlDataReader DR;
+            DR = comm.ExecuteReader();
+            DR.Read();
+            int codFunc = DR.GetInt32(0);
+            Conexao.fecharConexao();
+
+            return codFunc;
+        }
+        private void cbbFuncao_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            codFunc = buscaCodigoFuncao(cbbFuncao.SelectedItem.ToString()); 
+            
+        }
     }
 }

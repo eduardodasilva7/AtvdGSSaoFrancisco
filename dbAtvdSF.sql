@@ -28,16 +28,10 @@ create table tbUsuario(
     primary key(codUsu)
 );
 
-create table tbFotos(
-    codFotos int not null ,
-    imagem longBlob not null,
-    enderecoImagem varchar(100) not null,
-    primary key(codFotos)
-)
 
 create table tbFuncoes(
     codFunc int not null,
-    descricao varchar(100) not null,
+    descricao varchar(50) not null,
     primary key(codFunc)
 );
 
@@ -57,10 +51,10 @@ create table tbVoluntarios(
     data datetime,
     hora dateTime,
     status int(11),
-    codFotos int not null,
+    fotos longblob, 
     primary key(codVol),
     foreign key(codFunc) references tbFuncoes(codFunc),
-    foreign key(codFotos) references tbFotos(codFotos)
+    
 );
 
 insert into tbVoluntarios(nome,email,telCel,endereco,numero,cep,complemento,bairro,cidade,estado,codFUnc,data,hora,status,codFotos)values(@nome,@email,@telCel,@endereco,@numero,@cep,@complemento,@bairro,@cidade,@estado,@codFUnc,@data,@hora,@status,@codFotos);

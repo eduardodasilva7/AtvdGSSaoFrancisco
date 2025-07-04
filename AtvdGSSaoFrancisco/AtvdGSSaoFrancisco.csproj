@@ -123,6 +123,12 @@
     <Compile Include="frmEstoque.Designer.cs">
       <DependentUpon>frmEstoque.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmGerenciarFuncoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGerenciarFuncoes.Designer.cs">
+      <DependentUpon>frmGerenciarFuncoes.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,12 @@
     </Compile>
     <Compile Include="frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPesquisarFUncao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPesquisarFUncao.Designer.cs">
+      <DependentUpon>frmPesquisarFUncao.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPesquisarUsuarios.cs">
       <SubType>Form</SubType>
@@ -164,11 +176,17 @@
     <EmbeddedResource Include="frmEstoque.resx">
       <DependentUpon>frmEstoque.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmGerenciarFuncoes.resx">
+      <DependentUpon>frmGerenciarFuncoes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPesquisarFUncao.resx">
+      <DependentUpon>frmPesquisarFUncao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPesquisarUsuarios.resx">
       <DependentUpon>frmPesquisarUsuarios.cs</DependentUpon>

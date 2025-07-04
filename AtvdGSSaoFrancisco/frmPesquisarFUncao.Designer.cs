@@ -1,6 +1,6 @@
 ﻿namespace AtvdGSSaoFrancisco
 {
-    partial class frmPesquisarVoluntarios
+    partial class frmPesquisarFuncao
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPesquisarVoluntarios));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPesquisarFuncao));
             this.btnLimpar = new System.Windows.Forms.Button();
             this.gpbPesquisarPor = new System.Windows.Forms.GroupBox();
             this.txtDescricao = new System.Windows.Forms.TextBox();
@@ -47,7 +47,7 @@
             this.btnLimpar.Location = new System.Drawing.Point(418, 158);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(233, 83);
-            this.btnLimpar.TabIndex = 20;
+            this.btnLimpar.TabIndex = 24;
             this.btnLimpar.Text = "&Limpar";
             this.btnLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLimpar.UseVisualStyleBackColor = true;
@@ -62,7 +62,7 @@
             this.gpbPesquisarPor.Location = new System.Drawing.Point(12, 12);
             this.gpbPesquisarPor.Name = "gpbPesquisarPor";
             this.gpbPesquisarPor.Size = new System.Drawing.Size(381, 140);
-            this.gpbPesquisarPor.TabIndex = 17;
+            this.gpbPesquisarPor.TabIndex = 21;
             this.gpbPesquisarPor.TabStop = false;
             this.gpbPesquisarPor.Text = "Pesquisar por";
             // 
@@ -114,7 +114,7 @@
             this.ltbPesquisar.Location = new System.Drawing.Point(399, 21);
             this.ltbPesquisar.Name = "ltbPesquisar";
             this.ltbPesquisar.Size = new System.Drawing.Size(473, 122);
-            this.ltbPesquisar.TabIndex = 18;
+            this.ltbPesquisar.TabIndex = 22;
             this.ltbPesquisar.SelectedIndexChanged += new System.EventHandler(this.ltbPesquisar_SelectedIndexChanged);
             // 
             // btnPesquisar
@@ -124,27 +124,28 @@
             this.btnPesquisar.Location = new System.Drawing.Point(142, 158);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(241, 83);
-            this.btnPesquisar.TabIndex = 19;
+            this.btnPesquisar.TabIndex = 23;
             this.btnPesquisar.Text = "&Pesquisar";
             this.btnPesquisar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPesquisar.UseVisualStyleBackColor = true;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
-            // frmPesquisarVoluntarios
+            // frmPesquisarFuncao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(885, 262);
+            this.ClientSize = new System.Drawing.Size(881, 255);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.gpbPesquisarPor);
             this.Controls.Add(this.ltbPesquisar);
             this.Controls.Add(this.btnPesquisar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.Name = "frmPesquisarVoluntarios";
+            this.MinimizeBox = false;
+            this.Name = "frmPesquisarFuncao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "GSF - Pesquisar Voluntarios";
-            this.Load += new System.EventHandler(this.frmPesquisarVoluntarios_Load);
+            this.Text = "GSF - Pesquisar Função";
+            this.Load += new System.EventHandler(this.frmPesquisarFUncao_Load);
             this.gpbPesquisarPor.ResumeLayout(false);
             this.gpbPesquisarPor.PerformLayout();
             this.ResumeLayout(false);
